@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Factură</title>
+		<style>
+			#tabl{
+				border-collapse:collapse;
+			}
+			#tabl td, #tabl th{
+				border:1px solid black;
+			}
+			p{color:red};
+		</style>
+        <script>
+            window.onload = function()
+            {
+                let p = document.getElementById("total");
+                let pr = document.getElementsByClassName("pret");
+                let pret_total = 0;
+                for(let pret in pr)
+                    pret_total += parseInt(pret.innerHTML);
+                p.innerHTML = "Total: " + pret_total + " lei.";
+            }
+        </script>
+	</head>
+	<body>
+		<h1>Factură Zumbee</h1>
+		<p>Stimate domn <%-locals.utilizator.nume %> <%-locals.utilizator.prenume %>, aveți aici lista de produse achiziționate.</p> 
+		<table id="tabl">
+			<thead>
+				<tr>
+					<th>Produs</th>
+					<th>Preț</th>
+                    <th>Gramaj</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+                <% for (let prod of locals.produse) { %>
+                    <tr>
+                        <td><%-  prod.nume %></td>
+                        <td class="pret"><%-  prod.pret %></td>
+                        <td><%-  prod.gramaj %></td>
+                    </tr>
+                <% } %>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3" id="total"></td>
+				</tr>
+			</tfoot>
+		</table>
+	</body>
+</html>

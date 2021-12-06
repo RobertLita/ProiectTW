@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <title>ZumBee - Produse</title>
+        <%- include("../fragmente/head") %>     
+        <link rel="stylesheet" href="/resurse/css/useri.css" type="text/css" />
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+    <div class="afisaj">
+        <h2>Useri</h2>
+
+		<table id="useri">
+		  <tr>
+			<th>id</th><th>Username</th><th>Nume</th><th>Data</th><th>Resetează parolă utilizator</th>
+		  </tr>
+
+		  <% for (var i = 0; i < useri.length; i++) { 
+				if(useri[i].rol=="comun"){
+				%>
+				<tr>
+				  <td><%= useri[i].id %></td>
+                  <td><%= useri[i].username %></td>
+				  <td><%= useri[i].nume + ' ' + useri[i].prenume%></td>
+				  
+				  <%  
+					d=new Date(useri[i].data_adaugare)
+					sir_data=`${d.getDate()}/${d.getMonth()}/${d.getFullYear()} ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`
+				  %>
+				  <td><%=  sir_data %></td>
+				  <td><form method="post" action="/reset">
+                      <input type="submit" value="Reset" class="buton2">
+                      <input type="hidden" value="<%= useri[i].id %>" name="id_pass">
+                    </form>
+                  </td>
+				</tr> 
+   
+				<% } %>			
+		  <% } %>
+		</table>
+		
+		<!-- <p>Sterge utilizator</p>
+		<form id="sterge" method="post" action="/sterge_utiliz">
+			<label>
+				Id: <input type="text" name="id_utiliz" value="">
+			</label>
+			
+			<input type="submit" value="Submit">
+		</form> -->
+	</div>
+</main>
+
+
+    <%- include("../fragmente/footer") %>
+
+</body>
+</html>

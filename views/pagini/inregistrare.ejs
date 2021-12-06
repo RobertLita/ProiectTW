@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <title>ZumBee - Înregistrare</title>
+        <%- include("../fragmente/head") %>
+        <script type="text/javascript" src=/resurse/js/inregistrare.js></script>
+		<link rel="stylesheet" href="/resurse/css/inregistrare.css" type="text/css" />
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+    <div class="afisaj">
+        <h1 class="titlu">Înregistrare utilizator</h1>
+        
+		<% if (locals.err !="") { %>
+		<form id="form_inreg"  method="post" class="date"  action="/inreg" id="inregistrare" enctype="multipart/form-data">
+			<p>
+				<label>
+					Username: <input type="text" name="username" required pattern="[A-Za-z0-9]+">
+					<span class="exemplu">(Username-ul trebuie ai aibă maxim 10 caractere și să se termine în 4 cifre.)</span>
+				</label>
+			</p>
+			<p>
+				<label>
+					Nume: <input type="text" name="nume" required>
+				</label>
+			</p>
+			<p>
+				<label>
+					Prenume: <input type="text" name="prenume" required>
+				</label>
+			</p>
+			<p>
+				<label>
+					Parolă: <input id="parl" type="password" name="parola" value="" required>
+					<span class="exemplu">(Parola trebuie să conțină litere și cifre.)</span>
+				</label>
+			</p>
+			<p>
+				<label>
+					Reintroduceți parola: <input id="rparl" type="password" name="rparola" value="" required>
+				</label>
+			</p>
+			<p>
+				<label>
+					Email: <input type="text" name="email" size="30" required>
+				</label>
+			</p>
+			<p>
+				<label>
+                    Selectează tema site-ului:
+					<!-- <select name="culoareText"><option value="red">rosu</option><option value="green">verde</option><option value="blue">albastru</option></select> -->
+                    <input type="radio" value="dark" name="tema"><label>Dark</label>
+                    <input type="radio" value="light" name="tema" checked><label>Light</label>
+				</label>
+			</p>
+			<p>
+				<label>
+					Poză: <input type="file" name="poza">
+				</label>			
+			</p>
+			<p class="butoane">		
+				<input type="submit" value="Trimite" class="buton1">
+				<input type="reset" value="Resetează" class="buton1">
+			</p>
+		</form>
+	<% } %>
+	<% if(locals.raspuns) { %>
+	<%- locals.raspuns+"<br/>"%>
+	<% } %>
+	<% if(locals.err) { %>
+	<%- locals.err %>
+	<% } %>
+    </div>
+</main>
+
+<footer>
+    <%- include("../fragmente/footer") %>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+#useri{
+	border-collapse:collapse;
+}
+
+#useri td, #useri th{
+	border:1px solid black;
+	padding:5px;
+	
+}
+
+main{
+	padding-left:1.5rem;
+}
+h2{
+    margin-top: 0;
+}
+.buton2{
+    font-family: "Signika",sans-serif;
+    font-weight: bold;
+    color: var(--culoare_curenta);
+    background: var(--culoare_gri);
+    border: none;
+    text-align: center;
+    border-radius: 1rem;
+    padding-right: 0.2rem;
+    cursor: pointer;
+    text-decoration: none;
+    width: 4rem;
+    padding: 0.3rem;
+}

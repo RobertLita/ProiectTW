@@ -1,0 +1,28 @@
+{
+    "evenimente": [
+		{
+            "nume":"Va avea loc festivalul național de miere, la Râmnicu Vâlcea, acolo unde vom fi și noi prezenți și ne poți incerca produsele!",
+            "data": "10.06.2021"
+        },
+        {
+            "nume":"De astăzi vom putea livra și în Europa.",
+            "data": "1.06.2021"
+        },
+        {
+            "nume":"Vom aproviziona cu noi produse delicioase magazinul nostru de pe strada Mihai Eminescu, nr. 140!",
+            "data": "5.06.2021"
+        },
+        {
+            "nume":"Vom adăuga produse noi, delicioase și naturale.",
+            "data": "15.06.2021"
+        },
+        {
+            "nume":"Promoțiile lunii sunt pe cale să expire.",
+            "data": "28.06.2021"
+        },
+        {
+            "nume":"De astăzi, ne veți putea găsi și în Cluj și Timișoara.",
+            "data": "30.06.2021"
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+iframe{
+    max-width:900px;
+    width: 70%;
+    height: 25rem;
+    border: 0.4rem solid var(--culoare_back);
+    border-style: inset;
+}
+div.taburi_iframe a{
+    text-decoration: none;
+    padding-left: 0;
+    width: 7rem;
+    border: 2px solid var(--culoare_back);
+    padding: 0.2rem;
+    margin-right: 0;
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+    background-image: linear-gradient(90deg, var(--culoare_back) 2%, var(--culoare_back) 4%, var(--culoare_extra) 9%);
+    color:var(--culoare_border);
+    transition: all 400ms linear;
+    text-align: center;
+}
+div.taburi_iframe a:hover{
+    background-image: none;
+    background-color: var(--culoare_back);
+    color:var(--culoare_extra);
+}
+div.taburi_iframe{
+    width: 7.4rem;
+    height: 7.9rem;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}

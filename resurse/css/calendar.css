@@ -1,0 +1,13 @@
+#calendar1{
+    display:grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap:0.2rem;
+    color:var(--culoare_curenta);
+}
+#calendar1 div:nth-child(n+8).zi{
+    border:1px solid black;
+}
+
+#calendar1 div:nth-child(n+8).eveniment{
+    background-color: var(--culoare_meniu);
+}

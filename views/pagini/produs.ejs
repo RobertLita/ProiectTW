@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+        <head>
+        <title>ZumBee - Produse2</title>
+        <%- include("../fragmente/head") %>     
+        <link rel="stylesheet" href="/resurse/css/produs.css" type="text/css" />
+        <script type="text/javascript" src=/resurse/js/produs.js></script>
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <section>
+            <h2>Pagină produs</h2>
+                <article id="art-produs">
+                    <h3><span class="nume"><%- locals.prod.nume %></span></h3>
+                    <p>Preț: <span class="pret"><%- locals.prod.pret %> lei</span> </p>
+                    <p>Descriere: <span class="descriere"><%- locals.prod.descriere %> </span></p>
+                    <p>Categorie: <span class="categorie"><%- locals.prod.tip_produs %> </span></p>
+                    <p>Tipul mierii: <span class="tip_miere"><%- locals.prod.facut_din %> </span></p>
+                    <p>Recipient: <span class="recipient"><%- locals.prod.recipient %> </span></p>
+                    <p>Gramaj: <span class="gramaj"><%- locals.prod.gramaj %> grame </span></p>
+                    <p>Recomandat pentru: <span class="propr"><%- locals.prod.proprietati %> </span></p>
+                    <p>Data adăugării: <span class="data"><%- locals.prod.data_producerii %> </span></p>
+                    <p class="premiu"><%- locals.prod.are_premiu %></p>
+                    <figure class="imag-produs">
+                        <img  src="/resurse/imagini/produse/<%- locals.prod.imagine %>" alt="[imagine <%- locals.prod.nume %>]" />
+                    </figure>    
+                    </article>
+            
+        </section>
+    </main>
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

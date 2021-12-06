@@ -1,0 +1,32 @@
+video{
+    height: 225px;
+    width: 400px;
+    box-shadow: 5px 10px 18px var(--culoare_border);
+}
+video::cue{
+    background-image:linear-gradient(90deg,var(--culoare_extra) , var(--culoare_meniu));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 1.1rem;
+}
+@media screen and (max-width: 560px){
+    video{
+        height: 158px;
+        width: 280px;
+        box-shadow: 5px 10px 18px var(--culoare_border);
+    }
+    video::cue{
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 365px){
+    video{
+        height: 112px;
+        width: 200px;
+        box-shadow: 5px 10px 18px var(--culoare_border);
+    }
+    video::cue{
+        font-size: 1.2rem;
+    }
+}

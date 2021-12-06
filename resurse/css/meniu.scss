@@ -1,0 +1,173 @@
+$inaltime_meniu:3rem;
+
+#ch-menu{
+    display: none ;
+}
+nav{
+    ul.meniu{
+        ul{
+            display: none;
+	        position: absolute;
+	        width:100%;
+        }
+    }
+}
+nav{
+    height: $inaltime-meniu;
+    width:100%;
+    padding:0;
+    background: var(--culoare_meniu);
+    z-index:10;
+    position: sticky;
+	position: -webkit-sticky;
+	top: 0;
+}
+nav{
+    ul.meniu{
+        >li{
+            float: left;
+            width: 6.5rem;
+	        position: relative;
+        }
+    }
+}
+nav {
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+	li {
+		padding: 0;
+		margin: 0;
+	}
+}
+nav{
+    ul.meniu{
+        li{
+			
+            text-align: center;
+            list-style-type: none;
+            background: var(--culoare_meniu);
+            cursor: pointer;
+        }
+    }
+}
+nav {
+	ul.meniu {
+		li {
+			a, div{
+				text-decoration: none;
+				color: var(--culoare_border);
+				display: block;
+				font-weight: bold;
+				min-height: $inaltime-meniu;
+				max-height: 3*$inaltime_meniu;
+				line-height: $inaltime_meniu/2;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+		}
+	}
+}
+
+nav{
+    ul.meniu{
+        >li{
+			>a{
+            	transition-property: font-size;
+            	transition-duration: 0.5s;
+            	transition-timing-function: linear;
+			}
+        }
+    }
+}
+
+nav{
+    ul.meniu{
+        >li{
+            &:hover{
+				>a{
+                	font-size:1.12rem;
+				}
+				>ul {
+					display: block;
+					transform-origin: top;
+					animation-name: aparitie_submeniu;
+					animation-iteration-count: 1;
+					animation-duration: 400ms;
+					animation-fill-mode: forwards;
+					animation-timing-function: linear;
+				}
+            }
+			>ul{
+				>li{
+					position: relative;
+					&::after{
+						-webkit-transition: all 400ms linear;
+						transition: all 400ms linear;
+						transform-origin: top;
+						transform: scaleY(0);
+						background: linear-gradient(to left,white 0%,var(--culoare_meniu) 100%);
+						font-size:2.45rem;
+						content: "|";
+						position: absolute;	
+						color: transparent;
+						top: 0;
+						right: 0;
+					}
+					&::before{
+					-webkit-transition: all 400ms linear;
+					transform-origin: top;
+					transform: scaleY(0);
+					transition: all 400ms linear;
+					content: "|";
+					background: linear-gradient(to right,white 0%,var(--culoare_meniu) 100%);
+					font-size:2.45rem;
+					color: transparent;
+					position: absolute;
+					top: 0;
+					left: 0;
+					}
+				}
+				>li:hover::after{
+					transform: scaleY(1);
+				}
+				>li:hover::before{
+					transform: scaleY(1);
+				}
+												
+				
+			}
+			
+		}
+    }
+}
+
+#hamburger{
+    display: none;
+    height: $inaltime-meniu;
+}
+#hamburger img{
+    height:100%;
+    width:auto;
+}
+@keyframes aparitie_submeniu{
+	0% {
+		transform: scaleY(0);
+	  }
+	  100%{
+		transform: scaleY(1);
+	  }
+}
+@keyframes gradient_margine {
+	0%{
+		height: 0;
+	}
+	100%{
+		height: $inaltime_meniu;
+	}
+	
+}
+

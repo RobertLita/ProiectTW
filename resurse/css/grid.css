@@ -1,0 +1,65 @@
+#grid-pagina{
+    display: grid;
+    grid-template-areas:"prezentare prezentare prezentare prezentare"
+                        "info1 info2 info3 info4"
+                        "calendar orar orar oferte"
+                        "extra extra extra extra"
+                        "detalii detalii on_users statistici";
+    grid-gap: 2rem;
+    padding: 4%;
+}
+
+#grid-pagina section{
+    border:1px solid var(--culoare_high);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+#prezentare{
+    grid-area: prezentare;
+}
+#info1{
+    grid-area: info1;
+    text-align: center;
+    background-color: var(--culoare_extra);
+}
+#info2{
+    grid-area: info2;
+    text-align: center;
+    background-color: var(--culoare_extra);
+}
+#info3{
+    grid-area: info3;
+    text-align: center;
+    background-color: var(--culoare_extra);
+}
+#info4{
+    grid-area: info4;
+    text-align: center;
+    background-color: var(--culoare_extra);
+}
+#calendar{
+    grid-area: calendar;
+}
+#orar{
+    text-align: center;
+    grid-area: orar;
+}
+#oferte{
+    grid-area: oferte;
+}
+#on_users{
+    grid-area: on_users;
+}
+#statistici{
+    grid-area: statistici;
+}
+#detalii{
+    grid-area: detalii;
+}
+#extra{
+    grid-area: extra;
+}
+#welcome{
+    width: 100%;
+    height: 100%;
+}

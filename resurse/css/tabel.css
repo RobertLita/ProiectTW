@@ -1,0 +1,32 @@
+#tab-orar td, #tab-orar th{
+    border:1px solid var(--culoare_border);
+}
+tbody>tr:nth-child(2n+1){
+    background-color: var(--culoare_extra);
+}
+tbody>tr:nth-child(2n){
+    background-color: var(--culoare_meniu);
+}
+tfoot>tr:nth-child(2n){
+    background-color: var(--culoare_extra);
+}
+tfoot>tr:nth-child(2n+1){
+    background-color: var(--culoare_meniu);
+}
+table{
+    border-spacing: 1px;
+    text-align: center;
+    margin: 0 auto;
+}
+.no_hover{
+    pointer-events: none;
+}
+tbody>tr>td:not(tbody>tr>td[rowspan]),tfoot>tr>td:not(tfoot>tr>td[rowspan]){
+    transition: background-color 300ms linear;
+}
+tbody>tr:hover>td:not(tbody>tr>td[rowspan]),tfoot>tr:hover>td:not(tfoot>tr>td[rowspan]){
+    background-color: var(--culoare_text);
+}
+footer{
+    text-align: center;
+}

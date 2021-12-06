@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <title>ZumBee - Eroare 403</title>
+        <link rel="stylesheet" href="/resurse/css/404.css" type="text/css"/>
+        <%- include("../fragmente/head") %>     
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main class="e404">
+        <div id="imagine">
+            <img src="/resurse/imagini/albina.png" alt="albina" >
+        </div>
+        <section>
+            <h2 id="titlu">403 - Acces respins</h2>
+            <p id="info">Din păcate, nu ai permisiunea de accesa această pagină.</p>
+            <form action="/index" id="buton">
+                <input type="submit" value="Pagina principală" class="buton"/>
+            </form>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

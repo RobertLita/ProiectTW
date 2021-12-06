@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>ZumBee - produse apicole naturale</title>
+    <%- include("../fragmente/head") %> 
+    <link rel="stylesheet" href="/resurse/css/galerie_statica.css" type="text/css" />
+    <link rel="stylesheet" href="/temp/galerie-animata.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/printare.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/video.css" type="text/css" />
+    <link rel="stylesheet" href="/resurse/css/calendar.css" type="text/css" />
+</head>
+
+<body>
+    <%- include("../fragmente/header") %>
+    <main id="grid-pagina">
+        <div class="banner">
+            <p>Acesta este un proiect școlar!</p>
+        </div>
+        <p id="watermark"></p>
+        <div id="prezentare" class="box">
+            <img id="welcome" src="resurse/imagini/welcome.jpg" alt="prezentare" class="imagine">
+            <div class="text">
+                <p><span class="font">ZumBee</span> vă oferă o gamă largă de produse apicole 100% naturale produse din dragoste pentru natură.</p>
+                <p>Comandă acum și descoperă gustul mierii adevarate!</p>
+                <form action="/produse">
+                    <input type="submit" value="Vezi produsele" class="buton"/>
+                </form>
+            </div>
+        </div>
+        <section id=info1>
+                <h2>Transport gratuit</h2>
+                <aside>
+                    <h3>la comenzile de peste 100 de lei</h3>
+                </aside>
+        </section>
+        <section id=info2>
+            <h2>Retur gratuit</h2>
+            <aside>
+               <h3>în termen de 10 zile lucrătoare</h3>
+            </aside>
+         </section>
+        <section id=info3>
+            <h2>Livrare rapidă</h2>
+            <aside>
+                <h3>oriunde în România</h3>
+            </aside>
+        </section>
+        <section id=info4>
+            <h2>Cea mai bună calitate</h2>
+            <aside>
+                <h3>la toate produsele noastre</h3>
+            </aside>
+        </section>
+        <section id="orar">
+            <h2>Orar</h2>
+            <div class="div_tabel">
+                <table id="tab-orar">
+                    <thead>                    
+                        <tr>
+                            <th>Perioadă</th>
+                            <th>Zi</th>
+                            <th>Interval dimineață</th>
+                            <th>Pauza de masă</th>
+                            <th>Interval seară</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="5" class="no_hover">Zile<br/>Lucrătoare</td>
+                            <td>Luni</td>
+                            <td>10-12</td>
+                            <td>12-14</td>
+                            <td>14-20</td>
+                        </tr>
+                        <tr>
+                            <td>Marți</td>
+                            <td>10-12</td>
+                            <td>12-14</td>
+                            <td>14-20</td>
+                        </tr>
+                        <tr>
+                            <td>Miercuri</td>
+                            <td>10-12</td>
+                            <td>12-14</td>
+                            <td>14-20</td>
+                        </tr>
+                        <tr> 
+                            <td>Joi</td>
+                            <td>9-11</td>
+                            <td>11-13</td>
+                            <td>14-21</td>
+                        </tr>
+                        <tr>
+                            <td>Vineri</td>
+                            <td>9-12</td>
+                            <td>-</td>
+                            <td>12-16</td>
+                        </tr>
+                        </tbody>  
+                        <tfoot>
+                            <tr>
+                                <td rowspan="2" class="no_hover">Weekend</td>
+                                <td>Sâmbătă</td>
+                                <td>10-12</td>
+                                <td>12-13</td>
+                                <td>13-16</td>
+                            </tr>
+                            <tr>
+                                <td>Duminică</td>
+                                <td>9-14</td>
+                                <td>-</td>
+                                <td>închis</td>
+                            </tr>
+                    </tfoot>
+                               
+                </table> 
+            </div>
+        </section>
+        <section id="calendar">
+            <h2>Calendar</h2>
+            <!-- <ul>
+                <li>24.03: Va avea loc festivalul național de miere, la Râmnicu Vâlcea, acolo unde vom fi și noi prezenți și ne poți incerca produsele!</li>
+                <li>16.03: De astăzi vom putea livra și în Europa.</li>
+                <li>09.03: Vom aproviziona cu noi produse delicioase magazinul nostru de pe strada Mihai Eminescu, nr. 140!</li>
+            </ul> -->
+            <div id="calendar1">
+                <div>L</div>
+                <div>Ma</div>
+                <div>Mi</div>
+                <div>J</div>
+                <div>V</div>
+                <div>S</div>
+                <div>D</div>
+            <% 
+            nrZile=[31,28,31,30,31,30,31,31,30,31,30,31];
+            
+            d = new Date(); 
+            anCurent = d.getFullYear();
+            lunaCurenta = d.getMonth();
+            if(anCurent%400==0 || (anCurent%4==0 && anCurent%100!=0)) nrZile=29;
+            let nrZileCalendar=nrZile[lunaCurenta]
+            primaZiLuna=new Date(anCurent, lunaCurenta, 1);
+            ultimaZiLuna=new Date(anCurent, lunaCurenta, nrZileCalendar);
+            ziSaptPrimaZiLuna=(primaZiLuna.getDay()-1+7)%7;
+            ziSaptUltimaZiLuna=(ultimaZiLuna.getDay()-1+7)%7;
+            for (let i=0;i<ziSaptPrimaZiLuna;i++){
+             %>
+             <div></div> 
+             <% } 
+
+             
+             for (let i=1;i<=nrZileCalendar;i++){
+                var obiectEvenimente=null;
+                    if(locals.evenimente)
+                         obiectEvenimente=locals.evenimente.find(function(elem){ return elem.data.valueOf()==new Date(anCurent,lunaCurenta,i).valueOf()})
+                 if(obiectEvenimente)
+                 {
+                 %>
+                 <div class="zi eveniment" title="<%= obiectEvenimente.text %>"><%= i %></div> 
+                 <%
+                 }
+                 else{
+                %>
+                <div class="zi"><%= i %></div> 
+                <% } 
+            } %>
+            </div>
+        </section>
+        <section id="promotii">
+            <h2>Promoții</h2>
+            <article>
+                <h3>Oferta de primăvară 2+1!</h3>
+                <p>La 2 borcane de miere cumpărate, primiți încă unul gratis!</p>
+                <p><strong>Atenție!</strong> Oferta este valabilă până la sfârșitul primăverii.</p>
+            </article>
+            <article>
+                <h3>Oferta "pachet complet"!</h3>
+                <p>Vă oferim:</p>
+                <ul> 
+                    <li>3 borcane cu miere de diferite tipuri</li>
+                    <li>o cutie cu bomboane din miere</li>
+                    <li>un fagure delicios</li>
+                    <li>un borcan cu miere și propolis</li>
+                </ul>
+                    <p>la prețul de 80 de lei.</p>
+                <p><strong>Atenție!</strong> Oferta este valabilă în limita stocurilor disponibile.</p>
+            </article>
+        </section>
+        <div id=extra>
+            <div class="galeriestatica">
+                <%- include("../fragmente/galerie_statica") %>
+            </div>
+            
+            <section id="beneficii">
+                <h2>Beneficiile mierii de albine:</h2>
+                <ul>
+                    <li>Mierea conține mulți <b>antioxidanți</b> - care reduc riscul atacurilor de cord, atacurilor cerebrale, îmbunătațesc vederea și reduc tensiunea arterială.</li>
+                    <li>Ameliorează <b>durerile</b> de gât si tusea - datorită proprietații de <i>emolient</i>.</li>
+                    <li>Ajută la <b>vindecarea</b> rănilor - acest beneficiu se datorează acțiunii antibacteriene. Mierea combate proliferarea bacteriilor și va accelera refacerea țesuturilor care au suferit diverse tipuri de răni.</li>
+                    <li>Este o grozavă <b>sursă de energie</b> care nu induce <i>hipoglicemia</i>.</li>
+                    <li>Întărește <b>sistemul imunitar</b> și ajută la ameliorarea simptomelor alergiilor - stimulează producția de anticorpi contribuind astfel la preveniera îmbolnăvirilor de orice tip și ajutând corpul să lupte cu organismele patogene. </li>
+                </ul>
+                <aside class="ascunde">
+                    <p>Mai multe informații utile:</p>
+                    <div class="taburi_iframe">
+                        <a href="https://www.youtube.com/embed/uEZXLy3adjQ" target="ifr-video">Alte beneficii ale mierii</a>
+                        <a href="https://www.youtube.com/embed/hbfiJHW-LP4" target="ifr-video">Cum se face mierea?</a><br>
+                    </div>
+                    <iframe name="ifr-video" src="https://www.youtube.com/embed/uEZXLy3adjQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowfullscreen>
+                    </iframe>
+                </aside>    
+            </section>
+            <hr>
+            <section id="sectiune-galerie-animata">
+                <h2>Galerie animată</h2>
+                <div id="galerie-animata" class="galerie-a">
+                    <div class="galerie-grid">
+                        <% for (let imag of locals.imagini2){  %>
+                            <figure>
+                            <picture>
+                                <source srcset="/<%-imag.medie%>" media="(max-width:1200px)"/>
+                                <source srcset="/<%-imag.mic%>" media="(max-width:700px)"/>
+                                <img src="/<%-imag.mare%>" alt="text"/>
+                            </picture>
+                            <figcaption><%-imag.descriere%></figcaption>
+                            </figure>
+                        <% } %>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="faq">
+                <h2>Întrebări adresate frecvent:</h2>
+                <details>
+                    <summary>Mierea este 100% naturală?</summary>
+                    <p>Da! Pentru noi, calitatea este cea care contează, astfel că toate produsele noastre sunt naturale.</p>
+                </details>
+                <details>
+                    <summary>Care sunt modalitățile de plată?</summary>
+                    <p>Există mai multe modalități de plată:</p>
+                    <ol>
+                        <li>Numerar la livrare.</li>
+                        <li>În avans, la plasarea comenzii prin card bancar sau Revolut.</li>
+                    </ol>
+                </details>
+                <details>
+                    <summary>Ne puteți oferi mai multe informații cu privire la procedura de livrare?</summary>
+                    <ul>
+                        <li>Livrăm oriunde în Romania, iar la o comandă ce depașește 100 de lei, trasportul este gratuit.</li>
+                        <li>Dacă suma comenzii este mai mică de 100 de lei, prețul trasportului este de 10 lei.</li>
+                        <li>Termenul de livrare este de 2-5 zile lucrătoare.</li>
+                        <li>În cazul în care coletul a suferit daune în timpul trasportului, vom retrimite produsele respective, fără vreun cost suplimentar.</li>
+                        <li>Dacă sunteți nemulțumiți de produse, puteți face retur în termen de 10 zile lucrătoare gratuit.</li>
+                        <li>În condiții speciale (perioade aglomerate ale anului, dificultăți de expediere etc.), ZumBee își rezervă dreptul de a mari timpul de livrare, anunțându-vă telefonic sau prin email.</li>
+                    </ul>
+                </details>
+            </section>
+            <section class="section_video">
+                <h2>Un scurt video cu mierea noastră:</h2>
+                <video playsinline loop muted controls preload="auto" poster="/resurse/video/poster.png">
+                    <source src="/resurse/video/video_miere.mov" type="video/mp4">
+                    <source src="/resurse/video/video_miere.ogg" type="video/ogv">
+                    <track default src="/resurse/video/romana1.vtt" kind="captions" srclang="ro" label="romana">
+                    <track default src="/resurse/video/romana2.vtt" kind="captions" srclang="ro" label="romana">
+                    <track src="/resurse/video/engleza1.vtt" kind="captions" srclang="en" label="engleza">
+                    <track src="/resurse/video/engleza2.vtt" kind="captions" srclang="en" label="engleza">
+                </video>
+            </section>
+        </div>
+        <section id=detalii>
+            <%
+                dataServer=new Date();
+                sirData=dataServer.getHours()+":"+dataServer.getMinutes()+":"+dataServer.getSeconds()
+                %>
+            <h2>Detalii despre site și server:</h2>
+            <p>Ora server:<span id="data_server"><%= sirData %></span></p>
+            <p>Ora client:<span id="data_client"></span></p>
+                <script>
+                    function zero(nr){
+                        if (nr<10) return "0"+nr;
+                        return nr;
+                    }
+                    
+                    d=new Date()
+                    document.getElementById("data_client").innerHTML=zero(d.getHours())+":"+zero(d.getMinutes())+":"+zero(d.getSeconds());
+
+                    function actualizeazaElemData(id_div){
+                        var data_div=document.getElementById(id_div);
+                        if (data_div.innerHTML!="")
+                        {
+                            var timp=data_div.innerHTML.split(":")
+                            var dt=new Date(2000,1,15, timp[0],timp[1], timp[2] );//nu conteaza data (am pus valori random pentru an, luna si zi) ci timpul
+                        }
+                        else
+                            var dt=new Date();
+                        dt.setSeconds(dt.getSeconds()+1)
+                        data_div.innerHTML=zero(dt.getHours())+":"+zero(dt.getMinutes())+":"+zero(dt.getSeconds());
+                    }
+                    function actualizeazaData(){
+                        actualizeazaElemData("data_client");
+                        actualizeazaElemData("data_server");
+                    }
+                    actualizeazaData()
+                    setInterval(actualizeazaData,1000)
+                </script>
+            <p>
+            </p>
+        </section>
+        <section id=on_users>
+            <h2>Lista utilizatorilor online: (în ultimele 5 minute):</h2>
+                <% for (let i=0;i<locals.utiliz_online.length-1;i++) {%>
+                    <%= locals.utiliz_online[i].username %>, 
+                <%}%>
+                <% if(locals.utiliz_online.length>0) { %>
+                    <%= locals.utiliz_online[utiliz_online.length-1].username %>
+                <% }  %>
+            </p>
+        </section>
+        <section id=statistici>
+            <h2>Date despre utilizator și statistici:</h2>
+            <p> Ip-ul tău este: <%- locals.ip %> </p>
+            <p>Locația ip-ului tău este: <%= locals.locatie %></p>
+        </section>
+        <a href="#" class="link_top">
+            <div class="div_mare">
+                <div class="div_mic"></div>
+                <span class="tooltip">Mergi la începutul paginii</span>
+            </div>
+        </a>
+    </main>
+    <%- include("../fragmente/footer") %>
+</body>
+</html>

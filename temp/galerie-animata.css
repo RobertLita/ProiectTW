@@ -1,0 +1,245 @@
+div.galerie-grid {
+  display: grid;
+  width: 1200px;
+  grid-template-columns: 400px 400px 400px;
+  grid-template-rows: repeat(3, 300px);
+  grid-row-gap: 0;
+  grid-column-gap: 0;
+  grid-gap: 0;
+  transform-origin: 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-name: galerie;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 24.3s;
+}
+div.galerie-grid:hover {
+  animation-play-state: paused;
+}
+
+div.galerie-grid figure:nth-of-type(10) {
+  display: none;
+}
+
+div.galerie-grid figure:nth-of-type(11) {
+  display: none;
+}
+
+div.galerie-grid figure:nth-of-type(12) {
+  display: none;
+}
+
+div.galerie-grid figure:nth-of-type(13) {
+  display: none;
+}
+
+div.galerie-grid figure:nth-of-type(14) {
+  display: none;
+}
+
+div.galerie-grid figure:nth-of-type(15) {
+  display: none;
+}
+
+div.galerie-grid figure:nth-of-type(16) {
+  display: none;
+}
+
+div.galerie-grid figure:nth-of-type(17) {
+  display: none;
+}
+
+div.galerie-grid figure:nth-of-type(18) {
+  display: none;
+}
+
+.galerie-a {
+  width: 400px;
+  height: 300px;
+  border: 8px solid transparent;
+  border-image: linear-gradient(45deg, var(--culoare_high), var(--culoare_meniu)) 1;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 5rem;
+}
+
+div.galerie-grid img {
+  width: 100%;
+}
+
+.galerie-a figcaption {
+  position: absolute;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  text-align: center;
+}
+
+.galerie-a figure {
+  margin: 0;
+  position: relative;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+}
+
+@keyframes galerie {
+  0% {
+    transform-origin: 200px 150px;
+    top: 0;
+    left: 0;
+  }
+  4.4% {
+    transform-origin: 200px 150px;
+    top: 0;
+    left: 0;
+    transform: rotate(360deg);
+  }
+  6.6% {
+    transform: rotate(360deg);
+    top: -300px;
+    left: 0;
+  }
+  11% {
+    transform: rotate(360deg);
+    top: -300px;
+    left: 0px;
+  }
+  15.4% {
+    transform-origin: 200px 450px;
+    transform: rotate(0deg);
+    top: -300px;
+    left: 0px;
+  }
+  17.6% {
+    transform: rotate(0deg);
+    top: -300px;
+    left: -800px;
+  }
+  22% {
+    transform: rotate(0deg);
+    top: -300px;
+    left: -800px;
+  }
+  26.4% {
+    transform-origin: 1250px 430px;
+    transform: rotate(360deg);
+    top: -300px;
+    left: -800px;
+  }
+  28.6% {
+    transform: rotate(360deg);
+    top: -300px;
+    left: -400px;
+  }
+  33% {
+    transform: rotate(360deg);
+    top: -300px;
+    left: -400px;
+  }
+  37.4% {
+    transform-origin: 500px 450px;
+    transform: rotate(0deg);
+    top: -300px;
+    left: -400px;
+  }
+  39.6% {
+    transform: rotate(0deg);
+    top: 0px;
+    left: -400px;
+  }
+  44% {
+    transform: rotate(0deg);
+    top: 0px;
+    left: -400px;
+  }
+  48.4% {
+    transform-origin: 600px 150px;
+    transform: rotate(360deg);
+    top: 0px;
+    left: -400px;
+  }
+  50.6% {
+    transform: rotate(360deg);
+    top: 0px;
+    left: -800px;
+  }
+  55% {
+    transform: rotate(360deg);
+    top: 0px;
+    left: -800px;
+  }
+  59.4% {
+    transform-origin: 1100px 150px;
+    transform: rotate(0deg);
+    top: 0px;
+    left: -800px;
+  }
+  61.6% {
+    transform: rotate(0deg);
+    top: -600px;
+    left: -800px;
+  }
+  66% {
+    transform: rotate(0deg);
+    top: -600px;
+    left: -800px;
+  }
+  70.4% {
+    transform-origin: 930px 875px;
+    transform: rotate(360deg);
+    top: -600px;
+    left: -800px;
+  }
+  72.6% {
+    transform: rotate(360deg);
+    top: -600px;
+    left: 0px;
+  }
+  77% {
+    transform: rotate(360deg);
+    top: -600px;
+    left: 0px;
+  }
+  81.4% {
+    transform-origin: 50px 750px;
+    transform: rotate(0deg);
+    top: -600px;
+    left: 0px;
+  }
+  83.6% {
+    transform: rotate(0deg);
+    top: -600px;
+    left: -400px;
+  }
+  88% {
+    transform: rotate(0deg);
+    top: -600px;
+    left: -400px;
+  }
+  92.4% {
+    transform-origin: 650px 775px;
+    transform: rotate(360deg);
+    top: -600px;
+    left: -400px;
+  }
+  94.6% {
+    transform: rotate(360deg);
+    top: 0;
+    left: 0;
+  }
+  99% {
+    transform: rotate(360deg);
+    top: 0;
+    left: 0;
+  }
+}
+@media screen and (max-width: 1200px) {
+  #sectiune-galerie-animata {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=galerie-animata.css.map */

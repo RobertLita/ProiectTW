@@ -1,0 +1,73 @@
+<header>
+    <a href="/index" class="link_logo">
+    <div class="div_logo">
+        <img src="/resurse/imagini/logo2.png" alt="logo">
+        <h1>
+            <span class="fontlogo">ZumBee</span>
+        </h1>
+    </div>
+    </a>
+    <div id="schimbare-tema">
+        <span class="fas fa-sun" id="light"></span>
+        <span class="fas fa-moon" id="dark"></span>
+    </div>
+    <% if (locals.utilizator) { %>
+        <div class="form" id="logat">
+            <p>Ești logat drept: <img src = "<%- locals.utilizator.imagine %>"   alt="imagine_profil"><a href="/profil" class="buton b2"><%- locals.utilizator.username %></a></p>
+            <p><a href="/logout" class="buton b2">Logout</a></p>
+            <p style="display: none;" id="tema_site"><%- locals.tema_site %></p>
+        </div>
+    <% }  %>
+    <% if (!locals.utilizator) { %>
+    <form id="login" method="post" action="/login" class="form">         
+        <label>
+            Username: <input type="text" name="username" >
+        </label>
+        <label>
+            Parolă: <input type="password" name="parola" value="">
+        </label>
+        <input type="submit" value="Login" class="buton b1 i1">
+    <% }  %>
+    </form>
+    
+</header>
+    <nav>
+        <label id="hamburger" for="ch-menu">
+            <img src="/resurse/imagini/Hamburger_icon_alb.png" alt="menu">
+        </label>
+        <input id="ch-menu" type="checkbox">
+        <ul class="meniu">
+            <li><a href="/index"><span class="fas fa-home"></span><div class="hide">Acasă</div></a>
+                <ul>
+                    <li><a href="/index#promotii">Promoții</a></li>
+                    <li><a href="/index#beneficii">Beneficiile mierii</a></li>
+                    <li><a href="/index#faq">Întrebări</a></li>
+                </ul>
+            </li>
+            <li><a href="/produse">Produse</a>
+                <ul id="prod">
+                    <% for( let categ of locals.categorii) { %>
+                        <li><a href="/produse?tip=<%- categ %>" class="maj"><%- categ %></a></li>
+                    <% } %>
+                </ul>
+            </li>
+            <li><a href="/despre">Despre noi</a>
+                <ul>
+                    <li><a href="/despre#cinesuntem">Cine suntem?</a></li>
+                    <li><a href="/despre#istoric">Istoric</a></li>
+                    <li><a href="/despre#galerie">Galerie</a></li>
+                </ul>
+            </li>
+            <li><a href="/contact">Contact</a></li>
+            
+            <% if (!locals.utilizator) { %>
+                <li><a href="/inregistrare">Înregistrare</a></li>
+            <% }  %>
+            <% if (locals.utilizator && locals.utilizator.rol=="admin") { %> 
+                <li><a href="/useri">Utilizatori</a></li>
+            <% } %>
+            <li><a href="/cos">Coșul meu</a></li>
+            <!-- <li><a href="/favorite">Favorite</a></li> -->
+            
+        </ul>
+    </nav>

@@ -1,0 +1,140 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+            "cale_relativa":"albine.jpg",
+            "nume":"albine",
+            "descriere":"Albine in stup",
+            "timp":"dimineata",
+            "galerie_animata": true
+        },
+		{
+			"cale_relativa":"floarea_soarelui.jpg",
+            "nume":"floare",
+            "descriere":"Floarea soarelui",
+            "timp":"dimineata",
+            "galerie_animata": true
+		},
+		{
+			"cale_relativa":"peisaj.jpg",
+            "nume":"peisaj",
+            "descriere":"Peisaj cu flori",
+            "timp":"dimineata",
+            "galerie_animata": true
+		},
+		{
+			"cale_relativa":"stupi1.jpg",
+            "nume":"stupi1",
+            "descriere":"Stupi cu albine",
+            "timp":"zi",
+            "galerie_animata": true
+		},
+		{
+			"cale_relativa":"stupi2.jpg",
+            "nume":"stupi2",
+            "descriere":"Stupi verticali",
+            "timp":"zi",
+            "galerie_animata": true
+		},
+		{
+			"cale_relativa":"stupina2.jpg",
+            "nume":"stupina2",
+            "descriere":"Stupina pe camp",
+            "timp":"zi",
+            "galerie_animata": true
+		},
+		{
+			"cale_relativa":"stupina1.jpg",
+            "nume":"stupina1",
+            "descriere":"Stupina si curcubeu",
+            "timp":"noapte",
+            "galerie_animata": true
+		}
+        ,
+        {
+            "cale_relativa":"stupi3.jpg",
+            "nume":"stupi3",
+            "descriere":"Stupi orizontali",
+            "timp":"noapte",
+            "galerie_animata": true
+        },
+        {
+            "cale_relativa":"stupi4.jpg",
+            "nume":"stupi4",
+            "descriere":"Stupi pe camp",
+            "timp":"noapte",
+            "galerie_animata": true
+        },
+        {
+            "cale_relativa":"apicultor.jpg",
+            "nume":"apicultor",
+            "descriere":"Apicultor",
+            "timp":"noapte",
+            "date_atibuire":"<Bees> by quisnovus is licensed with CC BY-NC 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/2.0/",
+            "galerie_animata": true
+        },
+        {
+            "cale_relativa":"fagure.jpg",
+            "nume":"fagure",
+            "descriere":"Fagure de miere",
+            "timp":"dimineata",
+            "date_atibuire":"<comb honey from alois dallmayr> by bionicgrrrl is licensed with CC BY-NC 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc/2.0/",
+            "galerie_animata": true
+        },
+        {
+            "cale_relativa":"albina.jpg",
+            "nume":"albina",
+            "descriere":"Albina pe o floare",
+            "timp":"dimineata",
+            "date_atibuire":"<Lavender Bee> by Bennilover is licensed with CC BY-ND 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nd/2.0/",
+            "galerie_animata": true
+        },
+        {
+            "cale_relativa":"albina_mac.jpg",
+            "nume":"albina pe mac",
+            "descriere":"Albina pe un mac",
+            "timp":"dimineata",
+            "date_atibuire":"<Headache Honey> by Hamed Saber is licensed with CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/",
+            "galerie_animata": true
+        },
+        {
+            "cale_relativa":"borcan.jpg",
+            "nume":"borcan miere",
+            "descriere":"Borcan cu miere",
+            "timp":"noapte",
+            "date_atibuire":"<Honey, honey, honey> by storebukkebruse is licensed with CC BY 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by/2.0/"
+        },
+        {
+            "cale_relativa":"floridemar.jpg",
+            "nume":"flori",
+            "descriere":"Flori de mar",
+            "timp":"noapte",
+            "date_atibuire":"<Flowers> by Nouhailler is licensed with CC BY-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/2.0/",
+            "galerie_animata": true
+        },
+        {
+            "cale_relativa":"albina1.jpg",
+            "nume":"albina",
+            "descriere":"Albina pe o floare",
+            "timp":"zi",
+            "date_atibuire":"<Honey Bee (Explored)> by Julie (thanks for 10 million views) is licensed with CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/",
+            "galerie_animata": true
+        },
+        {
+            "cale_relativa":"teren_flori.jpg",
+            "nume":"flori",
+            "descriere":"Teren inflorit",
+            "timp":"zi",
+            "date_atibuire":"<Beekeeping in Romania> by CharlesFred is licensed with CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/",
+            "galerie_animata": true
+        },
+        {
+            "cale_relativa":"stupi5.jpg",
+            "nume":"stupi",
+            "descriere":"Albinele intra si ies din stup",
+            "timp":"zi",
+            "date_atibuire":"<Beekeeping in Romania> by CharlesFred is licensed with CC BY-NC-SA 2.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/2.0/",
+            "galerie_animata": true
+        }
+	]
+}

@@ -1,0 +1,19 @@
+hr{
+    overflow: visible;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0.14rem ;
+    border-radius: 0.11rem;
+    background-image: linear-gradient(to right,var(--culoare_high) 46%,transparent 46%,transparent 54%,var(--culoare_high) 54%);
+    text-align: center;
+    height: 0.25rem;
+}
+hr::after{
+    content: "*";
+    font-size: 2.8rem;
+    top: -1rem;
+    display: inline-block;
+    position: relative;
+    color: var(--culoare_meniu);
+}

@@ -1,0 +1,77 @@
+html{
+    font-size:14px;
+}
+#grid-pagina{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "prezentare prezentare" 
+                         "info1 info2"
+                         "info3 info4"
+                         "orar oferte"
+                         "extra extra"
+                         "detalii calendar"
+                         "on_users statistici";
+    grid-gap: 1rem;
+}
+#prezentare{
+    grid-area: prezentare;
+}
+#info1{
+    grid-area: info1;
+}
+#info2{
+    grid-area: info2;
+}
+#info3{
+    grid-area: info3;
+}
+#info4{
+    grid-area: info4;
+}
+#calendar{
+    grid-area: calendar;
+}
+#orar{
+    grid-area: orar;
+}
+#oferte{
+    grid-area: oferte;
+}
+#on_users{
+    grid-area: on_users;
+}
+#statistici{
+    grid-area: statistici;
+}
+#produs{
+    grid-area: produs;
+}
+#produs{
+    grid-area: produs;
+}
+#extra{
+    grid-area: extra;
+}
+div.hide{
+    font-size: 0;
+}
+iframe{
+    max-width:900px;
+    width:70%;
+}
+div.taburi_iframe{
+   width: 6.3rem;
+}
+div.taburi_iframe a{
+    width: 6rem;
+ }
+.div_tabel{
+    overflow: auto;
+}
+.text{
+    font-size:0.9rem;
+}
+.buton{
+    padding: 0.3rem;
+    font-size: 0.85rem;
+}

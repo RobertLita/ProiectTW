@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <title>ZumBee - Eroare 404</title>
+        <link rel="stylesheet" href="resurse/css/404.css" type="text/css"/>
+        <%- include("../fragmente/head") %>     
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main class="e404">
+        <div id="imagine">
+            <img src="resurse/imagini/albina_trista.png" alt="albina" style="transform: scale(0.7);">
+        </div>
+        <section>
+            <h2 id="titlu">404 - pagina nu a fost găsită</h2>
+            <p id="info">Motivul poate fi adresa URL incorectă</p>
+            <form action="/index" id="buton">
+                <input type="submit" value="Pagina principală" class="buton"/>
+            </form>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

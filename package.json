@@ -1,0 +1,33 @@
+{
+  "name": "proiect_tw",
+  "version": "1.0.0",
+  "description": "magazin cu produse apicole",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "miere",
+    "albine",
+    "fagure",
+    "propolis",
+    "produse",
+    "naturale"
+  ],
+  "author": "Lita Robert Cristian",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "formidable": "^1.2.2",
+    "html-pdf-node": "^1.0.7",
+    "nodemailer": "^6.6.2",
+    "pg": "^8.6.0",
+    "puppeteer": "^12.0.1",
+    "request": "^2.88.2",
+    "sass": "^1.32.13",
+    "sharp": "^0.28.2"
+  }
+}

@@ -1,0 +1,755 @@
+$nr_imagini: $nr_imagini !default;
+
+div.galerie-grid{
+	display:grid;
+    width:1200px;
+    grid-template-columns: 400px 400px 400px;
+    grid-template-rows: repeat($nr_imagini / 3, 300px);
+    grid-row-gap :0;
+    grid-column-gap: 0;
+	grid-gap: 0;
+	transform-origin: 0 0;
+	position: absolute;
+	top:0;
+	left:0;
+    animation-name:galerie;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
+    animation-duration:2.7s * $nr_imagini ;	
+	&:hover {
+		animation-play-state: paused;
+	  }
+}
+@for $i from $nr_imagini+1 through 18{
+	div.galerie-grid figure:nth-of-type(#{$i}){
+		display: none;
+	}
+} 
+.galerie-a{
+	width:400px;
+	height:300px;
+	border: 8px solid transparent;
+    border-image: linear-gradient(45deg, var(--culoare_high), var(--culoare_meniu)) 1;
+	position: relative;
+	overflow: hidden;
+	margin-bottom:5rem;
+}
+div.galerie-grid img{
+	width: 100%;
+}
+.galerie-a figcaption{
+	position:absolute;
+	bottom:0;
+	background: rgba(255, 255, 255, 0.7);
+	width:100%;
+	text-align:center;
+}
+.galerie-a figure{
+	margin: 0;
+	position:relative;
+	width:400px;
+	height:300px;
+	overflow: hidden;
+}
+
+
+@if $nr_imagini == 9 {
+
+@keyframes galerie{ 
+	0%{
+		transform-origin: 200px 150px;
+		top:0;
+		left:0;
+	}
+	4.4%{
+		transform-origin: 200px 150px;
+		top: 0;
+		left:0;
+		transform: rotate(360deg);
+	}
+	6.6%{
+		//transform-origin: 200px 150px;
+		transform: rotate(360deg);
+		top: -300px;
+		left: 0;
+	}
+	11%{
+		//transform-origin: 200px 150px;
+		transform: rotate(360deg);
+		top: -300px;
+		left: 0px;
+	}
+	15.4%{
+		transform-origin: 200px 450px;
+		transform: rotate(0deg);
+		top: -300px;
+		left: 0px;
+	}
+	17.6%{
+		//transform-origin: 200px 450px;
+		transform: rotate(0deg);
+		top: -300px;
+		left: -800px;
+	}
+	22%{
+		//transform-origin: 200px 450px;
+		transform: rotate(0deg);
+		top: -300px;
+		left: -800px;
+	}
+	26.4%{
+		transform-origin: 1250px 430px;
+		transform: rotate(360deg);
+		top: -300px;
+		left: -800px;
+	}
+	28.6%{
+		//transform-origin: 1200px 450px;
+		transform: rotate(360deg);
+		top: -300px;
+		left: -400px;
+	}
+	33%{
+		//transform-origin: 1200px 450px;
+		transform: rotate(360deg);
+		top: -300px;
+		left: -400px;
+	}
+	37.4%{
+		transform-origin: 500px 450px;
+		transform: rotate(0deg);
+		top: -300px;
+		left: -400px;
+	}
+	39.6%{
+		//transform-origin: 800px 450px;
+		transform: rotate(0deg);
+		top: 0px;
+		left: -400px;
+	}
+	44%{
+		//transform-origin: 800px 450px;
+		transform: rotate(0deg);
+		top: 0px;
+		left: -400px;
+	}
+	48.4%{
+		transform-origin: 600px 150px;
+		transform: rotate(360deg);
+		top: 0px;
+		left: -400px;
+	}
+	50.6%{
+		//transform-origin: 600px 150px;
+		transform: rotate(360deg);
+		top: 0px;
+		left: -800px;
+	}
+	55%{
+		//transform-origin: 600px 150px;
+		transform: rotate(360deg);
+		top: -0px;
+		left: -800px;
+	}
+	59.4%{
+		transform-origin: 1100px 150px;
+		transform: rotate(0deg);
+		top: 0px;
+		left: -800px;
+	}
+	61.6%{
+		//transform-origin: 1200px 150px;
+		transform: rotate(0deg);
+		top: -600px;
+		left: -800px;
+	}
+	66%{
+		//transform-origin: 1200px 150px;
+		transform: rotate(0deg);
+		top: -600px;
+		left: -800px;
+	}
+	70.4%{
+		transform-origin: 930px 875px;
+		transform: rotate(360deg);
+		top: -600px;
+		left: -800px;
+	}
+	72.6%{
+		//transform-origin: 1200px 750px;
+		transform: rotate(360deg);
+		top: -600px;
+		left: 0px;
+	}
+	77%{
+		//transform-origin: 1200px 750px;
+		transform: rotate(360deg);
+		top: -600px;
+		left: 0px;
+	}
+	81.4%{
+		transform-origin: 50px 750px;
+		transform: rotate(0deg);
+		top: -600px;
+		left: 0px;
+	}
+	83.6%{
+		//transform-origin: 200px 750px;
+		transform: rotate(0deg);
+		top: -600px;
+		left: -400px;
+	}
+	88%{
+		//transform-origin: 200px 750px;
+		transform: rotate(0deg);
+		top: -600px;
+		left: -400px;
+	}
+	92.4%{
+		transform-origin: 650px 775px;
+		transform: rotate(360deg);
+		top: -600px;
+		left: -400px;
+	}
+	94.6%{
+		//transform-origin: 600px 750px;
+		transform: rotate(360deg);
+		top: 0;
+		left: 0;
+	}
+	99%{
+		//transform-origin: 600px 750px;
+		transform: rotate(360deg);
+		top: 0;
+		left: 0;
+	}
+}
+}
+@else if $nr_imagini == 12 {
+
+	@keyframes galerie{ 
+		0%{
+			transform-origin: 200px 150px;
+			top:0;
+			left:0;
+		}
+		3.3%{
+			transform-origin: 200px 150px;
+			top: 0;
+			left:0;
+			transform: rotate(360deg);
+		}
+		4.9%{
+			//transform-origin: 200px 150px;
+			transform: rotate(360deg);
+			top: -300px;
+			left: 0;
+		}
+
+		8.2%{
+			//transform-origin: 200px 150px;
+			transform: rotate(360deg);
+			top: -300px;
+			left: 0px;
+		}
+		11.5%{
+			transform-origin: 200px 450px;
+			transform: rotate(0deg);
+			top: -300px;
+			left: 0px;
+		}
+		13.1%{
+			//transform-origin: 200px 450px;
+			transform: rotate(0deg);
+			top: -300px;
+			left: -800px;
+		}
+
+		16.4%{
+			//transform-origin: 200px 450px;
+			transform: rotate(0deg);
+			top: -300px;
+			left: -800px;
+		}
+		19.7%{
+			transform-origin: 1250px 430px;
+			transform: rotate(360deg);
+			top: -300px;
+			left: -800px;
+		}
+		21.3%{
+			//transform-origin: 1200px 450px;
+			transform: rotate(360deg);
+			top: -300px;
+			left: -400px;
+		}
+		
+		24.6%{
+			//transform-origin: 1200px 450px;
+			transform: rotate(360deg);
+			top: -300px;
+			left: -400px;
+		}
+		27.9%{
+			transform-origin: 500px 450px;
+			transform: rotate(0deg);
+			top: -300px;
+			left: -400px;
+		}
+		29.5%{
+			//transform-origin: 800px 450px;
+			transform: rotate(0deg);
+			top: 0px;
+			left: -400px;
+		}
+
+		32.8%{
+			//transform-origin: 800px 450px;
+			transform: rotate(0deg);
+			top: 0px;
+			left: -400px;
+		}
+		36.1%{
+			transform-origin: 600px 150px;
+			transform: rotate(360deg);
+			top: 0px;
+			left: -400px;
+		}
+		37.7%{
+			//transform-origin: 600px 150px;
+			transform: rotate(360deg);
+			top: 0px;
+			left: -800px;
+		}
+
+		41%{
+			//transform-origin: 600px 150px;
+			transform: rotate(360deg);
+			top: -0px;
+			left: -800px;
+		}
+		44.3%{
+			transform-origin: 1100px 150px;
+			transform: rotate(0deg);
+			top: 0px;
+			left: -800px;
+		}
+		45.9%{
+			//transform-origin: 1200px 150px;
+			transform: rotate(0deg);
+			top: -600px;
+			left: -800px;
+		}
+
+		49.2%{
+			//transform-origin: 1200px 150px;
+			transform: rotate(0deg);
+			top: -600px;
+			left: -800px;
+		}
+		52.5%{
+			transform-origin: 930px 875px;
+			transform: rotate(360deg);
+			top: -600px;
+			left: -800px;
+		}
+		54.1%{
+			//transform-origin: 1200px 750px;
+			transform: rotate(360deg);
+			top: -600px;
+			left: 0px;
+		}
+
+		57.4%{
+			//transform-origin: 1200px 750px;
+			transform: rotate(360deg);
+			top: -600px;
+			left: 0px;
+		}
+		60.7%{
+			transform-origin: 50px 750px;
+			transform: rotate(0deg);
+			top: -600px;
+			left: 0px;
+		}
+		62.3%{
+			//transform-origin: 200px 750px;
+			transform: rotate(0deg);
+			top: -600px;
+			left: -400px;
+		}
+
+		65.6%{
+			//transform-origin: 200px 750px;
+			transform: rotate(0deg);
+			top: -600px;
+			left: -400px;
+		}
+		68.9%{
+			transform-origin: 650px 775px;
+			transform: rotate(360deg);
+			top: -600px;
+			left: -400px;
+		}
+		70.5%{
+			//transform-origin: 600px 750px;
+			transform: rotate(360deg);
+			top: -900px;
+			left: -400px;
+		}
+
+		73.8%{
+			//transform-origin: 600px 750px;
+			transform: rotate(360deg);
+			top: -900px;
+			left: -400px;
+		}
+		77.1%{
+			transform-origin: 650px 1075px;
+			transform: rotate(0deg);
+			top: -900px;
+			left: -400px;
+		}
+		78.7%{
+			//transform-origin: 600px 750px;
+			transform: rotate(0deg);
+			top: -900px;
+			left: 0px;
+		}
+
+		82%{
+			//transform-origin: 600px 750px;
+			transform: rotate(0deg);
+			top: -900px;
+			left: 0px;
+		}
+		85.3%{
+			transform-origin: 130px 975px;
+			transform: rotate(360deg);
+			top: -900px;
+			left: 0px;
+		}
+		86.9%{
+			//transform-origin: 600px 750px;
+			transform: rotate(360deg);
+			top: -900px;
+			left: -800px;
+		}
+
+		90.2%{
+			//transform-origin: 600px 750px;
+			transform: rotate(360deg);
+			top: -900px;
+			left: -800px;
+		}
+		93.5%{
+			transform-origin: 1250px 1050px;
+			transform: rotate(0deg);
+			top: -900px;
+			left: -800px;
+		}
+		95.1%{
+			//transform-origin: 600px 750px;
+			transform: rotate(0deg);
+			top: 0;
+			left: 0;
+		}
+	}
+}
+@else {
+
+	@keyframes galerie{ 
+		0%{
+			
+			transform-origin: 200px 150px;
+			top:0;
+			left:0;
+		}
+		2.6%{
+			transform-origin: 200px 150px;
+			top: 0;
+			left:0;
+			transform: rotate(360deg);
+		}
+		3.9%{
+			//transform-origin: 200px 150px;
+			transform: rotate(360deg);
+			top: -300px;
+			left: 0;
+		}
+
+		6.5%{
+			//transform-origin: 200px 150px;
+			transform: rotate(360deg);
+			top: -300px;
+			left: 0px;
+		}
+		9.1%{
+			transform-origin: 200px 450px;
+			transform: rotate(0deg);
+			top: -300px;
+			left: 0px;
+		}
+		10.4%{
+			//transform-origin: 200px 450px;
+			transform: rotate(0deg);
+			top: -300px;
+			left: -800px;
+		}
+
+		13%{
+			//transform-origin: 200px 450px;
+			transform: rotate(0deg);
+			top: -300px;
+			left: -800px;
+		}
+		15.6%{
+			transform-origin: 1250px 430px;
+			transform: rotate(360deg);
+			top: -300px;
+			left: -800px;
+		}
+		16.9%{
+			//transform-origin: 1200px 450px;
+			transform: rotate(360deg);
+			top: -300px;
+			left: -400px;
+		}
+		
+		19.5%{
+			//transform-origin: 1200px 450px;
+			transform: rotate(360deg);
+			top: -300px;
+			left: -400px;
+		}
+		22.1%{
+			transform-origin: 500px 450px;
+			transform: rotate(0deg);
+			top: -300px;
+			left: -400px;
+		}
+		23.4%{
+			//transform-origin: 800px 450px;
+			transform: rotate(0deg);
+			top: 0px;
+			left: -400px;
+		}
+
+		26%{
+			//transform-origin: 800px 450px;
+			transform: rotate(0deg);
+			top: 0px;
+			left: -400px;
+		}
+		28.6%{
+			transform-origin: 600px 150px;
+			transform: rotate(360deg);
+			top: 0px;
+			left: -400px;
+		}
+		29.9%{
+			//transform-origin: 600px 150px;
+			transform: rotate(360deg);
+			top: 0px;
+			left: -800px;
+		}
+
+		32.5%{
+			//transform-origin: 600px 150px;
+			transform: rotate(360deg);
+			top: -0px;
+			left: -800px;
+		}
+		35.1%{
+			transform-origin: 1100px 150px;
+			transform: rotate(0deg);
+			top: 0px;
+			left: -800px;
+		}
+		36.4%{
+			//transform-origin: 1200px 150px;
+			transform: rotate(0deg);
+			top: -600px;
+			left: -800px;
+		}
+
+		40%{
+			//transform-origin: 1200px 150px;
+			transform: rotate(0deg);
+			top: -600px;
+			left: -800px;
+		}
+		42.6%{
+			transform-origin: 930px 875px;
+			transform: rotate(360deg);
+			top: -600px;
+			left: -800px;
+		}
+		43.9%{
+			//transform-origin: 1200px 750px;
+			transform: rotate(360deg);
+			top: -600px;
+			left: 0px;
+		}
+
+		46.5%{
+			//transform-origin: 1200px 750px;
+			transform: rotate(360deg);
+			top: -600px;
+			left: 0px;
+		}
+		49.1%{
+			transform-origin: 50px 750px;
+			transform: rotate(0deg);
+			top: -600px;
+			left: 0px;
+		}
+		50.4%{
+			//transform-origin: 200px 750px;
+			transform: rotate(0deg);
+			top: -600px;
+			left: -400px;
+		}
+
+		53%{
+			//transform-origin: 200px 750px;
+			transform: rotate(0deg);
+			top: -600px;
+			left: -400px;
+		}
+		55.6%{
+			transform-origin: 650px 775px;
+			transform: rotate(360deg);
+			top: -600px;
+			left: -400px;
+		}
+		56.9%{
+			//transform-origin: 600px 750px;
+			transform: rotate(360deg);
+			top: -900px;
+			left: -400px;
+		}
+
+		58.2%{
+			//transform-origin: 600px 750px;
+			transform: rotate(360deg);
+			top: -900px;
+			left: -400px;
+		}
+		60.8%{
+			transform-origin: 650px 1075px;
+			transform: rotate(0deg);
+			top: -900px;
+			left: -400px;
+		}
+		62.1%{
+			//transform-origin: 600px 750px;
+			transform: rotate(0deg);
+			top: -900px;
+			left: 0px;
+		}
+
+		64.7%{
+			//transform-origin: 600px 750px;
+			transform: rotate(0deg);
+			top: -900px;
+			left: 0px;
+		}
+		67.3%{
+			transform-origin: 130px 975px;
+			transform: rotate(360deg);
+			top: -900px;
+			left: 0px;
+		}
+		68.6%{
+			//transform-origin: 600px 750px;
+			transform: rotate(360deg);
+			top: -900px;
+			left: -800px;
+		}
+
+		71.2%{
+			//transform-origin: 600px 750px;
+			transform: rotate(360deg);
+			top: -900px;
+			left: -800px;
+		}
+		73.8%{
+			transform-origin: 1250px 1050px;
+			transform: rotate(0deg);
+			top: -900px;
+			left: -800px;
+		}
+		75.1%{
+			//transform-origin: 600px 750px;
+			transform: rotate(0deg);
+			top: -1200px;
+			left: -800px;
+		}
+
+		77.7%{
+			//transform-origin: 600px 750px;
+			transform: rotate(0deg);
+			top: -1200px;
+			left: -800px;
+		}
+		80.3%{
+			transform-origin: 1000px 1350px;
+			transform: rotate(360deg);
+			top: -1200px;
+			left: -800px;
+		}
+		81.6%{
+			//transform-origin: 600px 750px;
+			transform: rotate(360deg);
+			top: -1200px;
+			left: -400px;
+		}
+
+		84.2%{
+			//transform-origin: 600px 750px;
+			transform: rotate(360deg);
+			top: -1200px;
+			left: -400px;
+		}
+		86.8%{
+			transform-origin: 600px 1350px;
+			transform: rotate(0deg);
+			top: -1200px;
+			left: -400px;
+		}
+		88.1%{
+			//transform-origin: 600px 750px;
+			transform: rotate(0deg);
+			top: -1200px;
+			left: 0px;
+		}
+
+		90.7%{
+			//transform-origin: 600px 750px;
+			transform: rotate(0deg);
+			top: -1200px;
+			left: 0px;
+		}
+		93.5%{
+			transform-origin: 200px 1350px;
+			transform: rotate(360deg);
+			top: -1200px;
+			left: 0px;
+		}
+		94.6%{
+			//transform-origin: 600px 750px;
+			transform: rotate(360deg);
+			transform: rotate(0deg);
+			top: 0px;
+			left: 0px;
+		}
+	}
+}
+
+@media screen and (max-width:1200px){
+	#sectiune-galerie-animata{
+		display: none;
+	}
+}
+

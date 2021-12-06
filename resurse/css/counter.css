@@ -1,0 +1,8 @@
+#faq{
+    counter-reset:ct; 
+}
+ 
+#faq summary::before{
+    counter-increment:ct; 
+    content:counter(ct) ". "; 
+}

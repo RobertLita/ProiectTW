@@ -1,0 +1,70 @@
+#watermark{
+    display:none;
+}
+@media print {
+    body{
+        background-image: none;
+    }
+    #sectiune-galerie-animata,aside.ascunde,div.galeriestatica,a.link_top, img, nav, .section_video{
+        display: none;
+    }
+    div.banner{
+        position: absolute;
+        text-align: center;
+        top:0;
+        width: 80%;
+        height: 50px;
+        border: 3px dotted black;
+    }
+	header div{
+        transform: scale(2.5);
+		page-break-after: always;
+		text-align: center;
+        margin-top: 10cm;
+		margin-left:10cm;
+        text-decoration: underline;
+	}
+	html, body {
+        width: 210mm;
+	    overflow:visible !important;
+	} 
+	#watermark
+	{
+		display: block;
+		position: fixed;
+		bottom:0;
+        left:50%;
+		color:rgba(0,0,0,0.4);
+	}
+	#watermark::after{
+			
+		opacity:0.65;
+        height: 2cm;
+        width: 100px;
+		display: block;
+		background: white;
+		border:3px double black;
+		border-radius: 3px;
+        text-align: center;
+		content:"Liță Robert";
+	}
+	footer{
+		page-break-before: always;
+	}
+}
+
+@page {
+	size: A4 portrait;
+	margin-bottom:2cm;
+	margin-top:2cm;
+	counter-increment: page;		
+}
+@page:left{
+	margin-left:2.5cm;
+	margin-right:0.5cm;
+	border-radius: 20cm;
+}
+@page:right{
+	margin-right:2.5cm;
+	margin-left:0.5cm;
+	}

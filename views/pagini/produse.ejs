@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <title>ZumBee - Produse</title>
+        <%- include("../fragmente/head") %>     
+        <script type="text/javascript" src=/resurse/js/produse.js></script>
+        <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+    </head>
+    <body>
+    <%- include("../fragmente/header") %>
+
+    <main>
+        <section class=inputuri>
+            <div class="st">
+                <label class="br">Caută după afecțiunile tratate de produs:<span class="exemplu">(de ex: imunitate, stres, anemie, răceală, tuse)</span> <input type="text" id="inp-text"></label><br>
+                <label class="br">Pret maxim: <input type="range" id="inp-pret" value="0" min="7"  max="125"></label>
+                <label class="radio br">Selectează tipul mierii dorite:
+                    <span class="exemplu">(stup se referă la produsele care provin direct din stup și nu din miere)</span>
+                    <% for( let tip_produs of locals.tipuri_produse) { %>
+                        <br><input type="checkbox" value="<%- tip_produs.tip_miere %>" name="tip_miere"><label class="litera"><%- tip_produs.tip_miere %></label>
+                        <span class="checkmark"></span>
+                    <% } %>
+                    <br><input type="checkbox" value="toate" name="tip_miere" checked><label>Orice tip de miere</label><br>
+                </label>
+                <label class="br">Selectează tipul/tipurile de ambalaj pe care nu le doriți:
+                    <span class="exemplu">(Pentru a selecta mai multe opțiuni, apasă tasta Ctrl)</span>
+                    <select id="inp-recipient" multiple>
+                        <% for( let rec of locals.recipiente) { %>
+                            <option value="<%- rec.recipient %>" name="recipient"><label><%- rec.recipient %></label></option>
+                        <% } %>
+                    </select>
+                </label>
+                <label class="br">Pentru miere, selectați cantitatea:
+                    <input type="radio" value="500" name ="cantitate"><label>500 de grame</label>
+                    <input type="radio" value="1000" name ="cantitate"><label>1 kilogram</label>
+                    <input type="radio" value="toate" name ="cantitate" checked><label>Orice cantitate</label>
+                </label><br>
+                <label class="br">Selectează produsele în funcție de premiu:
+                    <select id="premii">
+                        <option value="toate">Toate</option>
+                        <option value="true">Produse premiate</option>
+                        <option value="false">Produse nepremiate</option>
+                    </select>
+                </label><br>
+                <label class="br">
+                    Sau poți căuta direct după numele produsului:
+                    <br>
+                    <textarea name="textarea" rows="2"></textarea>
+                </label>
+                
+            </div>
+            <div class="dr">
+                <p class="butoane">
+                    <button id="filtrare" class="buton1">Filtrează</button>
+                    <button id="sortCrescNume" class="buton1">Sortează crescător după subcategorie</button>
+                    <button id="sortDescrescNume" class="buton1">Sortează descrescător după sugcategorie</button>
+                    <button id="resetare" class="buton1">Resetează</button>
+                </p>
+                <p>Apăsați Alt+"c" pentru suma prețurilor produselor afișate. </p>
+            </div>
+        </section>
+        <section id="produse">
+            <hr>
+            <h2>Produse</h2>
+            <div class="grid-produse">
+                <% for( let prod of locals.produse) { %>
+                    <article class="produs">
+                        <h3 class="nume"><a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
+                        <div class="stanga">
+                            <p class="categorie"><%- prod.tip_produs%></p>
+                            <figure>
+                                <img src="/resurse/imagini/produse/<%- prod.imagine %>" alt="[imagine <%- prod.nume %>]" />
+                            </figure>
+                            <p class="descriere"><span class="val-descriere"><%- prod.descriere%> </span></p>
+                        </div>
+                        <div class="dreapta">
+                            <p><span class="nume_categ">Preț:</span> <span class="val-pret"><%- prod.pret%> lei </span></p>
+                            <p><span class="nume_categ">Recipient:</span> <span class="val-recipient"><%- prod.recipient%></span></p>
+                            <p><span class="nume_categ">Recomandat pentru:</span><span class="val-proprietati"> <%- prod.proprietati%></span></p>
+                            <p><span class="nume_categ">Data producerii:</span> <time class="data"><%- prod.data_producerii%></time></p>
+                            <p><span class="premiu nume_categ val-premiu"><%- prod.are_premiu%></span></p>
+                            <p class="no"><span class="val-gramaj"><%- prod.gramaj%></span></p>
+                            <p class="no"><span class="val-tip-miere"><%- prod.facut_din%> </span></p>
+                        </div>
+                        <div class="cant">
+                                <input type="button" value="Adaugă în coș" class="adauga buton1 b3">
+                                <input type="number" value = "1" min="1" class="in_cant">
+                        </div>
+                                <input type="hidden" class="id_prod" value="<%-prod.id %>">                        
+                    </article>
+                <% }%>
+            </div>
+        </section>
+    </main>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+</html>

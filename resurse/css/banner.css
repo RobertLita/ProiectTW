@@ -1,0 +1,56 @@
+@media screen {
+    
+
+div.banner{
+    visibility: visible;
+    animation-name: animatie_banner;
+    animation-timing-function: linear;
+    animation-duration: 7.4s;
+    animation-fill-mode: forwards;
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--culoare_high);
+    color: var(--culoare_meniu);
+    border: 2px solid var(--culoare_border);
+}
+@keyframes animatie_banner {
+    0%{
+        transform: scaleX(0);
+        transform-origin: left;
+        background-color: var(--culoare_border);
+        color: var(--culoare_meniu);
+        border: 2px solid var(--culoare_high);
+    }
+    10%{
+        transform: scaleX(0.5);
+        transform-origin: left;
+        background-color: var(--culoare_meniu);
+        color: var(--culoare_border);
+        border: 2px solid var(--culoare_high);
+    }
+    20%{
+        transform-origin: left;
+        background-color: var(--culoare_high);
+        color: var(--culoare_meniu);
+        border: 2px solid var(--culoare_border);
+        transform: scaleX(1);
+    }
+    80%{
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    90%{
+        transform: scaleX(0.5);
+        transform-origin: right;
+    }
+    100%{
+        transform: scaleX(0);
+        transform-origin: right;
+        visibility: hidden;
+    }
+}
+}

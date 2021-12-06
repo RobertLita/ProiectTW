@@ -1,0 +1,64 @@
+div.div_mic{
+    width: 0;
+    height: 0;
+    border-left: 1.3rem solid transparent;
+    border-right: 1.3rem solid transparent;
+    border-bottom: 2.5rem solid var(--culoare_back) ;
+    border-radius: 2.5rem;
+    transform: rotate(-45deg);
+    transition: border-bottom 500ms linear, opacity 500ms linear;
+    opacity: 0.4;
+}
+div.div_mare{
+    border: 0.1rem solid var(--culoare_high);
+    background-color: var(--culoare_meniu);
+    opacity: 0.4;
+    transition: border 500ms linear,background-color 500ms linear, opacity 500ms linear;
+    width: 3rem;
+    height: 3rem;
+    box-sizing: content-box;
+}
+a.link_top{
+    display: block;
+    position: fixed;
+    bottom: 3rem;
+    left: 0.9rem;
+    width: 3rem;
+    height: 3rem;
+    transform: rotate(45deg);
+}
+span.tooltip{  
+    visibility: hidden;
+    transition: opacity 100ms linear;
+    transition-delay: 650ms;
+    width: 7rem;
+    background-color: black;
+    opacity: 0;
+    color: #fff;
+    padding: 0.2rem;
+    text-align: center;
+    border-radius: 0.2rem;
+    position: absolute;
+    bottom: 4rem;
+    left: 1.6rem;
+    z-index: 50;
+    transform: rotate(-45deg);
+}
+div.div_mare:hover{
+    background-color: var(--culoare_high);
+    border:0.1rem solid var(--culoare_back);
+    opacity: 1;
+}
+div.div_mare:hover span.tooltip{
+    visibility: visible;
+    opacity: 0.8;
+}
+div.div_mare:hover div.div_mic{
+    border-bottom: 2.5rem solid var(--culoare_meniu);
+    opacity: 1;
+}
+@media screen and (max-width: 500px){
+    .link_top{
+        visibility: hidden;
+    }
+}
