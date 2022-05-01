@@ -1,3 +1,4 @@
 # ProiectTW
-Site-ul unei companii care comercializeaza miere
-Prezentare: https://youtu.be/TiL4wPMByzc
+Site-ul unei companii care comercializeaza miere.
+  - HTML, CSS, JavaScript, NodeJS, PostgreSQL
+  - Prezentare: https://youtu.be/TiL4wPMByzc
